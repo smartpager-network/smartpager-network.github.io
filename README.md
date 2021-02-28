@@ -1,6 +1,7 @@
 # smartpager.network
 
 Smartpager.network aims to provide a fully featured and modular Paging Framework.
+
 Planned Features:
 - Menu Systems (only for Duplex Pagers like the Birdy Slim IoT)
 - Acknowledgement for Messages (only for Duplex Pagers like the Birdy Slim IoT)

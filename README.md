@@ -1,4 +1,4 @@
-# smartpager.network
+# 📟 smartpager.network
 
 Smartpager.network aims to provide a fully featured and modular Paging Framework.
 

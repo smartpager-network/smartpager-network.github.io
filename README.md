@@ -14,3 +14,6 @@ Planned Features:
 
 #### W.I.P
 - [lorawan-connector](https://github.com/smartpager-network/lorawan-connector) ( waiting for Birdy Slim IoT Pager to arrive )
+
+# Some interesting Documentation about...
+- the [Birdy Slim Pager](https://github.com/smartpager-network/smartpager-network.github.io/blob/master/BirdySlimDocumentation.md)

@@ -13,6 +13,7 @@ Planned Features:
 - [pocsag-connector](https://github.com/smartpager-network/pocsag-connector) ( works with the RFM69 or any other SX1231-Chipset Transceiver )
 
 #### W.I.P
+- [pager-daemon](https://github.com/smartpager-network/pager-daemon) (Work in Progress. This Piece of Software will handle Multipath-Routing)
 - [lorawan-connector](https://github.com/smartpager-network/lorawan-connector) ( waiting for Birdy Slim IoT Pager to arrive )
 
 # Some interesting Documentation about...

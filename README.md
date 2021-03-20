@@ -8,7 +8,7 @@ Planned Features:
 - Message Routing Modes (sensible Messages over LoRaWAN, anything else over POCSAG)
 - Integration/Compatibility with DAPNET
 - Many Message Ingress Modules, like bunq.com-Notifications, E-Mail, Telegram, etc..
-- [Application Flow](Basisfunctionaliteit SmartpagerNetwork.pdf)
+- [Application Flow](https://github.com/smartpager-network/smartpager-network.github.io/blob/master/Basisfunctionaliteit%20SmartpagerNetwork.pdf)
 
 #### Working Modules
 - [pocsag-connector](https://github.com/smartpager-network/pocsag-connector) ( works with the RFM69 or any other SX1231-Chipset Transceiver )

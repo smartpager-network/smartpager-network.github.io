@@ -13,6 +13,7 @@ Planned Features:
 - [pocsag-connector](https://github.com/smartpager-network/pocsag-connector) ( works with the RFM69 or any other SX1231-Chipset Transceiver )
 - [msg-email](https://github.com/smartpager-network/msg-email) - Creates Notifications for new, unread received emails.
 - [pager-daemon](https://github.com/smartpager-network/pager-daemon) (Work in Progress. This Piece of Software will handle Multipath-Routing and Responses)
+
 #### Planned Modules
 - msg-bunq
 - msg-weather

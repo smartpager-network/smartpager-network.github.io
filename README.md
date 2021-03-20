@@ -12,7 +12,7 @@ Planned Features:
 #### Working Modules
 - [pocsag-connector](https://github.com/smartpager-network/pocsag-connector) ( works with the RFM69 or any other SX1231-Chipset Transceiver )
 - [msg-email](https://github.com/smartpager-network/msg-email) - Creates Notifications for new, unread received emails.
-
+- [pager-daemon](https://github.com/smartpager-network/pager-daemon) (Work in Progress. This Piece of Software will handle Multipath-Routing and Responses)
 #### Planned Modules
 - msg-bunq
 - msg-weather
@@ -22,7 +22,6 @@ Planned Features:
 - msg-telegram-bot-input
 
 #### W.I.P
-- [pager-daemon](https://github.com/smartpager-network/pager-daemon) (Work in Progress. This Piece of Software will handle Multipath-Routing)
 - [lorawan-connector](https://github.com/smartpager-network/lorawan-connector) ( waiting for Birdy Slim IoT Pager to arrive )
 
 # Some interesting Documentation about...

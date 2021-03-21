@@ -7,6 +7,8 @@
 
 
 BirdySlim/Lite/IoT  ChipID 0x14762402 / STM32
+![image](https://user-images.githubusercontent.com/63829136/111890158-25d37d80-89e7-11eb-89ea-235593a53c2d.png)
+
 
 Debugpaths in Programming Software
 

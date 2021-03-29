@@ -3,8 +3,10 @@
 # LoRa Settings
 ![image](https://user-images.githubusercontent.com/63829136/112874430-3c529680-90c3-11eb-9dea-8d6a093f49bf.png)
 
+
 # GPS
 ![image](https://user-images.githubusercontent.com/63829136/112874465-496f8580-90c3-11eb-8556-88822839a6e4.png)
+
 
 # Acknowledgements
 
@@ -25,18 +27,31 @@ if wanted, you can configure Operational ACK
 
 If you want to use future Menu Systems, make sure to just give them a Number(options are declared inside the Message itself)
 
+
 # Messages "on/off" and OTA Status
 
 ![image](https://user-images.githubusercontent.com/63829136/112875253-3f9a5200-90c4-11eb-86a2-47e93bca5f40.png)
+
 
 # Battery and chare device messages
 
 ![image](https://user-images.githubusercontent.com/63829136/112875298-4e810480-90c4-11eb-8930-ab5b1ac54495.png)
 
 
+# Canned Messages
+
+![image](https://user-images.githubusercontent.com/63829136/112876107-5d1beb80-90c5-11eb-8c79-eedb5fa3cc65.png)
+
+
+# Statuses
+
+![image](https://user-images.githubusercontent.com/63829136/112876142-66a55380-90c5-11eb-9b0e-068987d9bed1.png)
+
+
 # SOS
 
 ![image](https://user-images.githubusercontent.com/63829136/112875123-0feb4a00-90c4-11eb-9361-191e80d05fed.png)
+
 
 # Lone Worker
 

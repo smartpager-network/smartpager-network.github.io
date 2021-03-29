@@ -29,4 +29,4 @@ Planned Features:
 
 # Some interesting Documentation about...
 - the [Birdy Slim Pager](https://github.com/smartpager-network/smartpager-network.github.io/blob/master/BirdySlimDocumentation.md)
-- the [Birdy Slim IoT LORAWAN Payload Foramtter](https://github.com/smartpager-network/smartpager-network.github.io/blob/master/birdy-slim-iot/payload-formatters/testing.md)
+- the [Birdy Slim IoT LORAWAN Payload Formatter](https://github.com/smartpager-network/smartpager-network.github.io/blob/master/birdy-slim-iot/payload-formatters/testing.md)

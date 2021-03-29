@@ -5,7 +5,7 @@ function Decoder(bytes, port) {
   decoded.latitude /= 10e4;
   decoded.longitude = ((bytes[4]<<24)>>>0) + ((bytes[5]<<16)>>>0) + ((bytes[6]<<8)>>>0) + bytes[7];
   decoded.longitude /= 10e4;
-  decoded.dur = bytes[8];
+  decoded.lastGPSAcquisition = bytes[8];
   return decoded;
 }
 
@@ -16,7 +16,7 @@ function decodeUplink(input) {
   data.latitude /= 10e4;
   data.longitude = ((bytes[4]<<24)>>>0) + ((bytes[5]<<16)>>>0) + ((bytes[6]<<8)>>>0) + bytes[7];
   data.longitude /= 10e4;
-  data.dur = bytes[8];
+  data.lastGPSAcquisition = bytes[8];
   return {
     data,
     warnings: [],

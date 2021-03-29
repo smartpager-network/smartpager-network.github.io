@@ -1,3 +1,5 @@
+// This is for TTNv2 (deprecated)
+// configured for having no Choice of Recipient for CannedMessages
 function Decoder(bytes, port) {
   var data = {}
   function bytesToString(a) {
@@ -23,18 +25,67 @@ function Decoder(bytes, port) {
       }
       break;
     case 3: // Status & Canned Messages
-    
-      break;
-    case '4': // Battery and Power Notifications + SOS Trigger
       
       break;
-    case 5:  // GPS Tracking Port '|G|'
-      data.type = 'gps'
-      data.latitude = ((bytes[0]<<24)>>>0) + ((bytes[1]<<16)>>>0) + ((bytes[2]<<8)>>>0) + bytes[3]
+    case '4': // Battery and Power Notifications
+      // Startup 'FF'
+      // Shutdown 'EE'
+      // Low Battery 'FD'
+      // ChargingOn '|V|CC'
+      // ChargingOff'|V|BB'
+      break;
+    case 5:  // OTAStatus + LoneWorker/SOS Trigger +  GPS Tracking Port '|G|'
+      // GPS Tracking '|G|'
+      // SOS Start 'FF|G|'
+      // SOS End 'FE|G|'
+      // LoneWorker Lack of movement 'FD|G|'
+      // LoneWorker Falldetect 'FC|G|'
+      // LoneWorker End 'FB|G|'
+      // OTA/PagerStatus 'FA|G||V|'
+      if (bytes.length !== 9) { // we have more than just the |G| block
+        if (bytes.length === 10) {
+          switch(bytes[0]) {
+            case 0xFF: // SOS Start
+              data.type = 'sos'
+              data.sos = true
+            break;
+            case 0xFE: // SOS End
+              data.type = 'sos'
+              data.sos = false
+            break;
+            case 0xFD: // LoneWorker Lack of movement
+              data.type = 'sos'
+              data.sos = false
+              data.loneworker = 'lackofmovement'
+            break;
+            case 0xFC: // LoneWorker Falldetect
+              data.type = 'sos'
+              data.sos = false
+              data.loneworker = 'falldetect'
+            break;
+            case 0xFB: // LoneWorker End
+              data.type = 'sos'
+              data.sos = false
+              data.loneworker = false
+            break;
+          }
+          bytes.splice(0,1)
+        }
+        if (bytes.length === 11) { // OTA PagerStatus
+          data.type = 'ota'
+          data.ota = 'status'
+          data.battery = bytes[11]
+          bytes.splice(0,1)
+        }
+      } else { // we are having a normal gps block only
+        data.type = 'gps'
+      }
+      var gpsBlock = bytes.splice(0,9)
+      data.latitude = ((gpsBlock[0]<<24)>>>0) + ((gpsBlock[1]<<16)>>>0) + ((gpsBlock[2]<<8)>>>0) + gpsBlock[3]
       data.latitude /= 10e4
-      data.longitude = ((bytes[4]<<24)>>>0) + ((bytes[5]<<16)>>>0) + ((bytes[6]<<8)>>>0) + bytes[7]
+      data.longitude = ((gpsBlock[4]<<24)>>>0) + ((gpsBlock[5]<<16)>>>0) + ((gpsBlock[6]<<8)>>>0) + gpsBlock[7]
       data.longitude /= 10e4
-      data.lastGPSAcquisition = bytes[8]
+      data.lastGPSAcquisition = gpsBlock[8]
       break;
   }
   return data;

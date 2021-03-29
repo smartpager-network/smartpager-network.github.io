@@ -4,7 +4,7 @@ function Decoder(bytes, port) {
     return a.map(function(x){ return String.fromCharCode(x) }).join('') // because very OLD js parser
   }
   switch (port) {
-    case 1: // Technical Received Acknowledgment '|5||C|''
+    case 1: // Technical Received Acknowledgment '|5||C|'
       // 31 32 33 34 35 20
       data.type = 'ack'
       data.ack = 'recv'
@@ -22,7 +22,13 @@ function Decoder(bytes, port) {
         data.operationalData = bytesToString(bytes)
       }
       break;
-    case 5:  // GPS Tracking Port
+    case 3: // Status & Canned Messages
+    
+      break;
+    case '4': // Battery and Power Notifications + SOS Trigger
+      
+      break;
+    case 5:  // GPS Tracking Port '|G|'
       data.type = 'gps'
       data.latitude = ((bytes[0]<<24)>>>0) + ((bytes[1]<<16)>>>0) + ((bytes[2]<<8)>>>0) + bytes[3]
       data.latitude /= 10e4

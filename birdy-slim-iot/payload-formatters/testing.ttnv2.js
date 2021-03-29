@@ -36,12 +36,19 @@ function Decoder(bytes, port) {
       break;
     case 5:  // OTAStatus + LoneWorker/SOS Trigger +  GPS Tracking Port '|G|'
       // GPS Tracking '|G|'
+      //// 00 1E 33 D7 00 4A 2C 31 10
       // SOS Start 'FF|G|'
+      //// FF 00 1E 33 D7 00 4A 2C 31 10
       // SOS End 'FE|G|'
+      //// FE 00 1E 33 D7 00 4A 2C 31 10
       // LoneWorker Lack of movement 'FD|G|'
+      //// FD 00 1E 33 D7 00 4A 2C 31 10
       // LoneWorker Falldetect 'FC|G|'
+      //// FC 00 1E 33 D7 00 4A 2C 31 10
       // LoneWorker End 'FB|G|'
+      //// FB 00 1E 33 D7 00 4A 2C 31 10
       // OTA/PagerStatus 'FA|G||V|'
+      //// FA 00 1E 33 D7 00 4A 2C 31 10 28
       if (bytes.length !== 9) { // we have more than just the |G| block
         if (bytes.length === 10) {
           switch(bytes[0]) {
@@ -74,7 +81,7 @@ function Decoder(bytes, port) {
         if (bytes.length === 11) { // OTA PagerStatus
           data.type = 'ota'
           data.ota = 'status'
-          data.battery = bytes[11]
+          data.battery = bytes[10] * 1
           bytes.splice(0,1)
         }
       } else { // we are having a normal gps block only

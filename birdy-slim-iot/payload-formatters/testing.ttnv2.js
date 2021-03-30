@@ -1,5 +1,3 @@
-// This is for TTNv2 (deprecated)
-// configured for having no Choice of Recipient for CannedMessages
 function Decoder(bytes, port) {
   var data = {}
   function bytesToString(a) {
@@ -27,12 +25,24 @@ function Decoder(bytes, port) {
     case 3: // Status & Canned Messages
       
       break;
-    case '4': // Battery and Power Notifications
+    case 4: // Battery and Power Notifications
       // Startup 'FF'
       // Shutdown 'EE'
       // Low Battery 'FD'
       // ChargingOn '|V|CC'
       // ChargingOff'|V|BB'
+      if (bytes.length == 1) {
+        data.type = 'power'
+        if (bytes[0] >= 0xEE) {
+          data.poweredOn =  bytes[0]== 0xFF
+        }
+        if (bytes[0] == 0xFD) {
+          data.type = 'low_battery'
+        }
+      } else {
+        data.battery = bytes[0] * 1
+        data.isCharging = bytes[1] == 0xCC
+      }
       break;
     case 5:  // OTAStatus + LoneWorker/SOS Trigger +  GPS Tracking Port '|G|'
       // GPS Tracking '|G|'

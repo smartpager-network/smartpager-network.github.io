@@ -23,7 +23,17 @@ function Decoder(bytes, port) {
       }
       break;
     case 3: // Status & Canned Messages
+      // Canned Message '01' --- '05', single Hex Number, incrementing
+      // Status '<StatusIncrID>|Z|' or if no CenterSelection '<StatusIncrID>00'
       
+      if (bytes.length == 1) {
+        data.type = 'cannedMessage'
+        data.cannedMessage = bytes[0] * 1
+      } else {
+        data.type = 'status'
+        data.status = bytes[0] * 1
+        data.selection = bytes[1] * 2
+      }
       break;
     case 4: // Battery and Power Notifications
       // Startup 'FF'

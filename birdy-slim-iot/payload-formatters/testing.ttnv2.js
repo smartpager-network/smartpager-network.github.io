@@ -1,3 +1,4 @@
+
 function Decoder(bytes, port) {
   var data = {}
   function bytesToString(a) {
@@ -32,7 +33,7 @@ function Decoder(bytes, port) {
       } else {
         data.type = 'status'
         data.status = bytes[0] * 1
-        data.selection = bytes[1] * 2
+        data.selection = bytes[1] * 1
       }
       break;
     case 4: // Battery and Power Notifications

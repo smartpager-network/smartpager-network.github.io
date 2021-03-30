@@ -45,7 +45,7 @@ If you want to use future Menu Systems, make sure to just give them a Number(opt
 
 # Statuses
 
-![image](https://user-images.githubusercontent.com/63829136/112876142-66a55380-90c5-11eb-9b0e-068987d9bed1.png)
+![image](https://user-images.githubusercontent.com/63829136/113031194-ae43e200-918e-11eb-82f6-86ffe7e5cffb.png)
 
 
 # SOS

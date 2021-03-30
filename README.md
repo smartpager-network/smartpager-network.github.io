@@ -9,13 +9,14 @@ Planned Features:
 - Integration/Compatibility with DAPNET
 - Many Message Ingress Modules, like bunq.com-Notifications, E-Mail, Telegram, etc..
 
-Working Features:)
+Working Features:
 - Acknowledgement for Messages (only for Duplex Pagers like the Birdy Slim IoT)
 - Device States( Birdy Slim IoT: GPSLocation, BatteryLevel, etc...)
 - Message Routing Modes
 
 #### How to Setup LoRaWAN for the Birdy Slim IoT
-
+- W.I.P
+- 
 #### Working Modules
 - [dispatcher-daemon](https://github.com/smartpager-network/pager-daemon) (This Piece of Software will handle Multipath-Routing and Responses) (LORAWAN included)
 - [msg-email](https://github.com/smartpager-network/msg-email) - Creates Notifications for new, unread received emails(IMAP).

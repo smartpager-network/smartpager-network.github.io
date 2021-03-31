@@ -9,13 +9,13 @@ Smartpager.network aims to provide a fully featured and modular Paging Framework
 
 Planned Features:
 - Menu Systems (only for Duplex Pagers like the Birdy Slim IoT
-- Integration/Compatibility with DAPNET
 - Many Message Ingress Modules, like bunq.com-Notifications, E-Mail, Telegram, etc..
 
 Working Features:
 - Acknowledgement for Messages (only for Duplex Pagers like the Birdy Slim IoT)
 - Device States( Birdy Slim IoT: GPSLocation, BatteryLevel, etc...)
 - Message Routing Modes
+- Integration/Compatibility with DAPNET (should work, needs testing)
 
 #### How to Setup LoRaWAN for the Birdy Slim IoT
 - W.I.P

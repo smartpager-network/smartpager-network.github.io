@@ -4,6 +4,9 @@ Smartpager.network aims to provide a fully featured and modular Paging Framework
 
 [W.I.P Application Flow](https://github.com/smartpager-network/smartpager-network.github.io/blob/master/Basisfunctionaliteit%20SmartpagerNetwork.pdf)
 
+[Wiki](https://github.com/smartpager-network/smartpager-network.github.io/wiki)
+[How to setup this Software](https://github.com/smartpager-network/smartpager-network.github.io/wiki/How-to-Setup-the-smartpager.network-Framework)
+
 Planned Features:
 - Menu Systems (only for Duplex Pagers like the Birdy Slim IoT
 - Integration/Compatibility with DAPNET

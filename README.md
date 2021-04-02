@@ -22,7 +22,7 @@ Working Features:
 
 #### How to Setup LoRaWAN for the Birdy Slim IoT
 - W.I.P
-- 
+
 #### Working Modules
 - [dispatcher-daemon](https://github.com/smartpager-network/pager-daemon) (This Piece of Software will handle Multipath-Routing and Responses) (LORAWAN included)
 - [msg-email](https://github.com/smartpager-network/msg-email) - Creates Notifications for new, unread received emails(IMAP).

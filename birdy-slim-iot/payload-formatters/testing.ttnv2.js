@@ -109,10 +109,10 @@ function Decoder(bytes, port) {
         data.type = 'gps'
       }
       var gpsBlock = bytes.splice(0,9)
-      data.latitude = ((gpsBlock[0]<<24)>>>0) + ((gpsBlock[1]<<16)>>>0) + ((gpsBlock[2]<<8)>>>0) + gpsBlock[3]
-      data.latitude /= 10e4
-      data.longitude = ((gpsBlock[4]<<24)>>>0) + ((gpsBlock[5]<<16)>>>0) + ((gpsBlock[6]<<8)>>>0) + gpsBlock[7]
+      data.longitude = ((gpsBlock[0]<<24)>>>0) + ((gpsBlock[1]<<16)>>>0) + ((gpsBlock[2]<<8)>>>0) + gpsBlock[3]
       data.longitude /= 10e4
+      data.latitude = ((gpsBlock[4]<<24)>>>0) + ((gpsBlock[5]<<16)>>>0) + ((gpsBlock[6]<<8)>>>0) + gpsBlock[7]
+      data.latitude /= 10e4
       data.lastGPSAcquisition = gpsBlock[8]
       break;
   }

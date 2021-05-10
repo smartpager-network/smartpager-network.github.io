@@ -1,4 +1,3 @@
-
 function Decoder(bytes, port) {
   var data = {}
   function bytesToString(a) {
@@ -10,14 +9,14 @@ function Decoder(bytes, port) {
       data.type = 'ack'
       data.ack = 'recv'
       data.msgid = bytesToString(bytes.splice(0,5))
-      data.rssi = bytes.splice(0,1) * 1
+      data.rssi = parseInt(bytesToString(bytes.splice(0,2)), 16)
       break;
     case 2: // Read and Operational Acknowledgment 'AA|5|' and Operational '33|5|<CustomByte(s)>'
       // AA 31 32 33 34 35
       // operational ack with Payload "test"(maybe you should use a single byte)
-      // 33 31 32 33 34 35 54 65 73 74
+      // 33  31 32 33 34 35  54 65 73 74
       data.type = 'ack'
-      data.ack = bytes.splice(0,1) == 0xAA ? 'read' : 'operational'
+      data.ack = bytes.length == 5 ? 'read' : 'operational'
       data.msgid = bytesToString(bytes.splice(0,5))
       if (data.ack === 'operational') {
         data.operationalData = bytesToString(bytes)
@@ -51,6 +50,7 @@ function Decoder(bytes, port) {
           data.type = 'low_battery'
         }
       } else {
+        data.type = 'battery'
         data.battery = bytes[0] * 1
         data.isCharging = bytes[1] == 0xCC
       }

@@ -11,7 +11,7 @@
 ## Acknowledgements
 
 select Format HEX, then use the small Helper Button on the right side of the Textbox
-
+!! select Format UTF8, and use 1-A intead of 01-0A, in the current(v26 and 30) Version of the Firmware there is a bug, that makes HEX formatting not work, please use UTF8.
 ![image](https://user-images.githubusercontent.com/63829136/112874665-7cb21480-90c3-11eb-8358-7a5f61b2bb55.png)
 
 ```
